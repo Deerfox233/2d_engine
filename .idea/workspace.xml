@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8cc2fbda-551a-46db-a586-7369d0b6bde7" name="变更" comment="整个了角色位移实时广播" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="HTML File" />
+        <option value="GLSL Shader" />
+        <option value="package.json" />
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2DHjEhODJfIZpr33cIMx8sOSFf6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;14.18.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;14.18.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/15896/Desktop/2d_engine&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\WebStorm 2022.1.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\15896\Desktop\2d_engine\src" />
+      <recent name="C:\Users\15896\Desktop\2d_engine\src\mat" />
+      <recent name="C:\Users\15896\Desktop\2d_engine\tex" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\15896\Desktop\2d_engine\src\graphics" />
+      <recent name="C:\Users\15896\Desktop\2d_engine\src\controll" />
+      <recent name="C:\Users\15896\Desktop\2d_engine\src\graphic" />
+      <recent name="C:\Users\15896\Desktop\2d_engine\public" />
+      <recent name="C:\Users\15896\Desktop\2d_engine\src" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\15896\Desktop\2d_engine\src\character\creature.ts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="8cc2fbda-551a-46db-a586-7369d0b6bde7" name="变更" comment="" />
+      <created>1660362793207</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660362793207</updated>
+      <workItem from="1660362794399" duration="4405000" />
+      <workItem from="1660368881188" duration="157000" />
+      <workItem from="1660369047643" duration="11665000" />
+      <workItem from="1660445514365" duration="6148000" />
+      <workItem from="1660489639220" duration="8929000" />
+      <workItem from="1660536642575" duration="13941000" />
+      <workItem from="1660620586779" duration="7402000" />
+      <workItem from="1660708222495" duration="642000" />
+      <workItem from="1661317382045" duration="2716000" />
+      <workItem from="1661441515242" duration="2218000" />
+      <workItem from="1661477671418" duration="1194000" />
+      <workItem from="1661587578179" duration="593000" />
+      <workItem from="1661688199807" duration="695000" />
+      <workItem from="1661700290961" duration="640000" />
+      <workItem from="1661740190492" duration="2123000" />
+      <workItem from="1661937801557" duration="5858000" />
+      <workItem from="1662198264372" duration="2299000" />
+      <workItem from="1664412368593" duration="3033000" />
+      <workItem from="1664701889992" duration="5882000" />
+      <workItem from="1664858678355" duration="3043000" />
+      <workItem from="1664861781748" duration="12934000" />
+      <workItem from="1664979714276" duration="2998000" />
+      <workItem from="1665120275867" duration="2582000" />
+      <workItem from="1665138732044" duration="15333000" />
+      <workItem from="1665203998026" duration="5350000" />
+      <workItem from="1665217304898" duration="3660000" />
+      <workItem from="1665225049534" duration="657000" />
+      <workItem from="1665228788113" duration="5085000" />
+      <workItem from="1665235356423" duration="3037000" />
+      <workItem from="1665273173272" duration="6180000" />
+      <workItem from="1665296047333" duration="6573000" />
+      <workItem from="1665305250604" duration="7861000" />
+      <workItem from="1665315505599" duration="4572000" />
+    </task>
+    <task id="LOCAL-00001" summary="整个了角色位移实时广播">
+      <created>1665319942513</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665319942514</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/index.js.map" />
+        <option value="$PROJECT_DIR$/src/character/creature.js" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/src/client/client.js.map" />
+        <option value="$PROJECT_DIR$/src/renderView.js.map" />
+        <option value="$PROJECT_DIR$/src/control/controller.js.map" />
+        <option value="$PROJECT_DIR$/src/client/client.js" />
+        <option value="$PROJECT_DIR$/src/renderView.js" />
+        <option value="$PROJECT_DIR$/src/character/creature.js.map" />
+        <option value="$PROJECT_DIR$/src/control/controller.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="整个了角色位移实时广播" />
+    <option name="LAST_COMMIT_MESSAGE" value="整个了角色位移实时广播" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

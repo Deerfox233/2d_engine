@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title id="clientID">2D Engine</title>
+</head>
+<body>
+<canvas id="view"></canvas>
+</body>
+<script src="http://localhost:5000/controller"></script>
+<script src="http://localhost:5000/renderView"></script>
+<script>
+    //初始化渲染窗口
+    new renderView.RenderView(1280, 720);
+    console.log("start looping...");
+    loop(0);
+
+    //渲染循环
+    function loop(time) {
+        time *= 0.03;
+        time = Math.floor(time);
+        renderView.RenderView.update(time);
+        requestAnimationFrame(loop);
+    }
+
+    //WebSocket连接
+    let ws = new WebSocket("ws://localhost:5001");
+    let myClientID = null;
+    let currentPlayers = [];
+
+    //发送连接请求
+    function connect() {
+        const payload = {
+            "method": "connect",
+        };
+        ws.send(JSON.stringify(payload));
+    }
+
+    //发送离开通知
+    function sendLeave() {
+        const payload = {
+            "method": "leave",
+            "clientID": myClientID,
+        };
+        this.send(JSON.stringify(payload));
+    }
+
+    //更新当前客户端角色位置信息
+    function update() {
+        const payload = {
+            "method": "location",
+            "clientID": myClientID,
+            "location": renderView.RenderView.getMyCreature().getLocation(),
+        };
+        ws.send(JSON.stringify(payload));
+    }
+
+    ws.onmessage = message => {
+        const result = JSON.parse(message.data);
+        let method = result.method;
+
+        if (method === "connect") {                         //接收连接成功信息
+            console.log("successfully connected");
+
+            myClientID = result.clientID;
+
+            document.getElementById("clientID").innerHTML = "clientID: " + myClientID;
+
+            //刷新当前已加入玩家列表
+            currentPlayers = result.currentPlayers;
+            //创建当前已加入玩家角色
+            if (currentPlayers.length !== 0) {
+                currentPlayers.forEach(player => {
+                    renderView.RenderView.newCreature(player.clientID, player.location.x, player.location.y);
+                });
+            }
+
+            //为渲染窗口设置当前客户端的角色
+            renderView.RenderView.setMyCreature(myClientID);
+
+            //实时发送当前客户端角色位置信息
+            setInterval(() => {
+                update();
+            }, 10);
+        } else if (method === "join") {                     //接收加入游戏广播
+            console.log(result.clientID + " joined the game");
+            //创建新的Creature
+            renderView.RenderView.newCreature(result.clientID, result.initialLocation.x, result.initialLocation.y);
+        } else if (method === "leave") {                  //接收离开游戏广播
+            console.log(result.clientID + " has disconnected from the game");
+            renderView.RenderView.removeCreature(result.clientID);
+        } else if (method === "position") {              //接收位置广播
+            const clientID = result.clientID;
+            const location = result.location;
+            renderView.RenderView.getCreatureByID(clientID).setLocation(location.x, location.y);
+        }
+    };
+
+    ws.onopen = () => {
+        connect();
+    };
+
+    ws.onclose = () => {
+        sendLeave();
+    };
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</html>
