@@ -1,0 +1,13 @@
+# 项目排除路径
+/dist/
+/node_modules/
+/src/character/creature.js
+/src/character/creature.js.map
+/src/client/client.js
+/src/client/client.js.map
+/src/control/controller.js
+/src/control/controller.js.map
+/src/renderView.js
+/src/renderView.js.map
+/index.js
+/index.js.map

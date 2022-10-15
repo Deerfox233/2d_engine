@@ -23,25 +23,30 @@ export class RenderView {
         window.addEventListener("keyup", SpriteController.keyup);
     }
 
+    public static resize(width: number, height: number) {
+        RenderView.view.width = width;
+        RenderView.view.height = height;
+    }
+
     private static setMyClientID(myClientID: string) {
-        console.log("setMyClientID");
+        // console.log("setMyClientID");
         RenderView.myClientID = myClientID;
     }
 
     private static addCreature(creature: Creature) {
-        console.log("addCreature");
+        // console.log("addCreature");
         RenderView.creatures.push(creature);
     }
 
     public static newCreature(clientID: string, x: number, y: number) {
-        console.log("newCreature");
+        // console.log("newCreature");
         if (clientID !== this.myClientID) {
             this.addCreature(new Creature(clientID, this.gl, x, y));
         }
     }
 
     public static setMyCreature(myClientID: string) {
-        console.log("setMyCreature");
+        // console.log("setMyCreature");
         //先判断creatures是否含有当前客户端的Creature
         RenderView.myCreature = this.getCreatureByID(myClientID);
         this.setMyClientID(myClientID);
@@ -49,12 +54,12 @@ export class RenderView {
     }
 
     public static getMyCreature(): Creature {
-        console.log("getMyCreature");
+        // console.log("getMyCreature");
         return RenderView.myCreature;
     }
 
     public static removeCreature(clientID: string) {
-        console.log("removeCreature");
+        // console.log("removeCreature");
         for (let i = 0; i < RenderView.creatures.length; i++) {
             if (RenderView.creatures[i].clientID === clientID) {
                 RenderView.creatures.splice(i, 1);
@@ -64,7 +69,7 @@ export class RenderView {
     }
 
     public static getCreatureByID(clientID: string): Creature {
-        console.log("getCreatureByID");
+        // console.log("getCreatureByID");
         if (clientID === RenderView.myClientID) {
             return RenderView.myCreature;
         } else {

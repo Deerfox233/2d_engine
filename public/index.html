@@ -11,7 +11,12 @@
 <script src="http://localhost:5000/renderView"></script>
 <script>
     //初始化渲染窗口
-    new renderView.RenderView(1280, 720);
+    new renderView.RenderView(window.innerWidth, window.innerHeight - 5);
+    window.addEventListener("resize", resizeRenderView);
+    function resizeRenderView() {
+        console.log("resize");
+        renderView.RenderView.resize(window.innerWidth, window.innerHeight - 5);
+    }
     console.log("start looping...");
     loop(0);
 
@@ -28,7 +33,7 @@
     let myClientID = null;
     let currentPlayers = [];
 
-    //发送连接请求
+    //发送连接请求（first）
     function connect() {
         const payload = {
             "method": "connect",
@@ -36,7 +41,7 @@
         ws.send(JSON.stringify(payload));
     }
 
-    //发送离开通知
+    //发送离开通知 （last）
     function sendLeave() {
         const payload = {
             "method": "leave",
@@ -60,10 +65,14 @@
         let method = result.method;
 
         if (method === "connect") {                         //接收连接成功信息
+            // {
+            //     "method": "connect",
+            //     "clientID": clientID,
+            //     "currentPlayers": currentPlayers       //当前在线玩家列表
+            // };
             console.log("successfully connected");
 
             myClientID = result.clientID;
-
             document.getElementById("clientID").innerHTML = "clientID: " + myClientID;
 
             //刷新当前已加入玩家列表
