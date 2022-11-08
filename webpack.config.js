@@ -1,12 +1,29 @@
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: {
-        "controller": "./src/control/controller.js",
         "renderView": './src/renderView.js',
     },
-    mode: "development",
-    devtool: false,
     output: {
         filename: '[name].bundle.js',
         library: "[name]",
-    }
+        clean: true
+    },
+    module: {
+        rules: [
+
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "public/index.html"),
+        })
+    ],
+    devtool: "cheap-module-source-map",
+    devServer: {
+        port:5000,
+        open: true,
+        hot: true,
+    },
+    mode: "development",
 }

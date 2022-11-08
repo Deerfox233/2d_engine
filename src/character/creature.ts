@@ -12,7 +12,8 @@ export class Creature {
         return this.sprite.getLocation();
     }
 
-    setLocation(x,y) {
+    setLocation(x: number, y: number) {
+        console.log("ID: " + this.clientID + " set to ", "(" + x.toFixed(2) + ", " + y.toFixed(2) + ")");
         this.sprite.setLocation(x, y);
     }
 
@@ -38,8 +39,8 @@ export class Creature {
         this.setLocation(x, y);             //初始化角色位置
     }
 
-    render(time, sequence) {
-        this.sprite.render(time, 16);
+    render(time: number, sequence: number) {
+        this.sprite.render(time, sequence);
     }
 }
 

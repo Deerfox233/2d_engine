@@ -3,6 +3,7 @@
     "module": "commonjs",
     "target": "es5",
     "sourceMap": true,
+//    "noImplicitAny": true,
     "lib": [
       "dom",
       "es5",
@@ -12,5 +13,5 @@
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

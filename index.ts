@@ -12,12 +12,7 @@ const app = new Koa();
 
 const main = context => {
     context.response.type = "html";
-    context.response.body = fs.createReadStream("./public/index.html");
-};
-
-const matrix = context => {
-    context.response.type = "javascript";
-    context.response.body = fs.createReadStream("./src/graphics/gl-matrix.js");
+    context.response.body = fs.createReadStream("./dist/index.html");
 };
 
 const renderView = context => {
@@ -25,17 +20,10 @@ const renderView = context => {
     context.response.body = fs.createReadStream("./dist/renderView.bundle.js");
 };
 
-const controller = context => {
-    context.response.type = "javascript";
-    context.response.body = fs.createReadStream("./dist/controller.bundle.js");
-};
-
 const assets = serve(path.join(__dirname));
 
 app.use(route.get("/main", main));
-app.use(route.get("/matrix", matrix));
 app.use(route.get("/renderView", renderView));
-app.use(route.get("/controller", controller));
 app.use(assets);
 
 app.listen(5000, () => {
@@ -62,9 +50,11 @@ const wsServer = new WSServer({
 });
 
 wsServer.on("request", request => {
-    const wsConnection = request.accept(null, request.origin);
+    const wsConnection: WS.connection
+        = request.accept(null, request.origin);
     const clientID: string = generateID();
     const client = new Client(wsConnection, clientID);
+
     const initialLocation = client.getLocation();
 
     Service.join(client);

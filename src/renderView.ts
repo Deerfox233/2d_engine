@@ -82,7 +82,7 @@ export class RenderView {
         return null;
     }
 
-    public static update(time) {
+    public static update(time: number) {
         RenderView.gl.viewport(0, 0, RenderView.view.width, RenderView.view.height);
         RenderView.gl.clear(RenderView.gl.COLOR_BUFFER_BIT);
 

@@ -74,7 +74,7 @@ export class Sprite {
     }
 
     //由Creature调用
-    setLocation(x,y) {
+    setLocation(x: number, y: number) {
         this.x = x;
         this.y = y;
     }
@@ -105,7 +105,7 @@ export class Sprite {
         }
     }
 
-    render(time, sequence) {
+    render(time: number, sequence: number) {
         if (this.ok) {
             this.animationPhase = time % sequence;
             this.updateMoving(0.01);

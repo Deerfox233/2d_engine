@@ -16,7 +16,7 @@ export class Client {
         };
     }
 
-    setLocation(x,y) {
+    setLocation(x: number, y: number) {
         this.x = x;
         this.y = y;
     }
@@ -41,13 +41,13 @@ export class Client {
         this._wsConnection = wsConnection;
         this._clientID = clientID;
 
-        //设置初始位置
+        //设置初始项（位置）
         this.x = Math.random() - 0.5;
         this.y = Math.random() - 0.5;
 
-        this._wsConnection.on("open", () => {
-            console.log("connection " + this._clientID + " opened");
-        });
+        // this._wsConnection.on("open", () => {
+        //     console.log("connection " + this._clientID + " opened");
+        // });
 
         this._wsConnection.on("close", function () {
             console.log("connection " + clientID + " closed");
@@ -57,7 +57,7 @@ export class Client {
                 "method": "leave",
                 "clientID": clientID,
             };
-            Service.clients.forEach(client => {         //广播离开信息
+            Service.clients.forEach(client => {         //向所有客户端广播离开信息
                 client.wsConnection.send(JSON.stringify(payload));
             });
         });
@@ -75,7 +75,7 @@ export class Client {
                     "clientID": clientID,
                     "location": location,
                 };
-                Service.clients.forEach(client => {         //广播位置信息
+                Service.clients.forEach(client => {         //向所有客户端广播当前客户端的位置信息（查看index.html）
                     client.wsConnection.send(JSON.stringify(payload));
                 });
             }
